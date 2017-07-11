@@ -4,8 +4,9 @@ public class rename
 {
 	public static void main(String args[])
 	{
-		String[] crap = {"1080p", "720p", "480p", "brrip", "hdrip"}; // array of strings to remove from the filename.
-		String dlpath = "N:\\downloads\\"; // path of the directory to work on.
+		String[] replacewithspace = {".", ",", "-", "_", "(", ")", "[", "]", "{", "}"}; // array of strings to replace with a space in the filename.
+		String[] replacewithnothing = {"1080p", "720p", "480p", "brrip", "hdrip", "webrip", "dvdrip", "dvdscr"}; // array of strings to replace with nothing in the filename.
+		String dlpath = "N:\\downloads\\test\\"; // path of the directory to work on.
 		File dir = new File(dlpath); // create file object.
 		File[] dirfiles = dir.listFiles(); // array of files in the directory.
 		for(File file:dirfiles) // loop through the files.
@@ -16,13 +17,14 @@ public class rename
 				filename = filename.toLowerCase(); // make whole filename lower case.
 				String filenamebase = filename.replaceAll("[.][^.]+$", ""); // get the filename without the extension.
 				String filenameext = filename.replaceAll("^.*\\.(.*)$", "$1"); // get the filename extension.
-				for(int loop = 0; loop < crap.length; loop++) // loop through the array of strings to remove from the filename.
+				for(int loop = 0; loop < replacewithspace.length; loop++) // loop through the array of strings to replace with a space.
 				{
-					filenamebase = filenamebase.replace(crap[loop], ""); // replace any found strings in the filename with nothing.
+					filenamebase = filenamebase.replace(replacewithspace[loop], " "); // replace any found strings in the filename with a space.
 				}
-				filenamebase = filenamebase.replaceAll(".", " "); // replace full stops with a single space, and trim.
-				filenamebase = filenamebase.replaceAll("-", " "); // replace hyphens with a single space, and trim.
-				filenamebase = filenamebase.replaceAll("_", " "); // replace underscores with a single space, and trim.
+				for(int loop = 0; loop < replacewithnothing.length; loop++) // loop through the array of strings to replace with nothing.
+				{
+					filenamebase = filenamebase.replace(replacewithnothing[loop], ""); // replace any found strings in the filename with nothing.
+				}
 				filenamebase = filenamebase.replaceAll("\\s{2,}", " ").trim(); // replace double spaces with a single space, and trim.
 				File newname = new File(dlpath + filenamebase + "." + filenameext); // create the new filename.
 				file.renameTo(newname); // rename the file.
