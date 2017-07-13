@@ -1,1 +1,4 @@
-dir /b /n > blah.txt
+:: /b = bare format
+:: /l = lowercase
+:: /s = include subfolders
+dir /b > blah.txt
