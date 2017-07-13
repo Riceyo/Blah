@@ -11,4 +11,3 @@ filenames = os.listdir(path)
 	
 for filename in filenames:
     os.rename(filename, filename.replace("720p", "").lower())
-	
