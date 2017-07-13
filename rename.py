@@ -1,6 +1,6 @@
 import os
 
-path =  os.getcwd()
+path =  os.getcwd() # get current working directory
 
 filenames = os.listdir(path)
 
