@@ -1,4 +1,4 @@
-nbvnbvn
+
 public class ExampleInterfaceCarCall {
 	public static void main(String args[]) {
 		ExampleInterfaceCar VWGolfGTI = new ExampleInterfaceCarVWGolfGTI(); // create object from the class constructor and assign it reference variable of the interface
