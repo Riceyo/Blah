@@ -1,5 +1,5 @@
 
-public class ExampleInterfaceCarAudiS3 implements ExampleInterfaceCar, ExampleInterfaceCarCustomise {
+public class ExampleInterfaceCarAudiS3 implements ExampleInterfaceCar {
 	String carName = "Audi S3";
 	@Override
 	public void getNoughtToSixtyMilesPerHour() {
@@ -15,10 +15,6 @@ public class ExampleInterfaceCarAudiS3 implements ExampleInterfaceCar, ExampleIn
 	}
 	@Override
 	public void getPrice() {
-		System.out.println(carName + " - £33,500");
-	}
-	@Override
-	public void getColour() {
-		System.out.println(carName + " - White");
+		System.out.println(carName + " - Â£33,500");
 	}
 }
