@@ -1,8 +1,8 @@
 
 public class ExampleIntro
 {
-	String globalvariable = "globalvariable"; // global/instance/object/class variable as inside a class but outside a method, can be accessed anywhere in this class object
-	public static String staticvariable = "staticvariable"; // static variable, only single copy exists, independent of object, can be accessed via dot notation
+	String instancevariable = "instancevariable"; // instance variable as inside a class but outside a method, can be accessed anywhere in this class
+	public static String staticvariable = "staticvariable"; // static variable ("class variable"), only single copy exists, independent of object, can be accessed via dot notation
 	public ExampleIntro() // default no-argument constructor, always runs once when creating object (even if not written), construct object from the class
 	{
 		System.out.println("default constructor");
@@ -21,7 +21,7 @@ public class ExampleIntro
 	}
 	public void method4() // method that doesn't expect any parameters to be passed to it
 	{
-		System.out.println("method4 " + globalvariable); // method body uses the global variable
+		System.out.println("method4 " + instancevariable); // method body uses the instance variable
 	}
 	public void method5() // method that doesn't expect any parameters to be passed to it
 	{
