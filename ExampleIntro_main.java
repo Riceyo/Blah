@@ -1,5 +1,5 @@
 
-// class - blueprint for an object, contains global/instance variables (data members, data, values, states) and methods (instructions, behaviours)
+// class - blueprint for an object, contains instance variables (data members, data, values, states) and methods (instructions, behaviours)
 // class modifiers can only be public, final, abstract
 // however inner classes can have other modifiers
 
@@ -8,8 +8,8 @@
 // access modifier default (no modifier) - only the package can access
 // access modifier private - only the class can access
 
-// non access modifier static - variable - exists independently from object, only single copy exists regardless of number of objects created
-// non access modifier static - method - exists independently from object, has no reference to objects variables, must be passed in via parameters
+// non access modifier static - variable - exists independently from class object, only single copy exists regardless of number of class objects created
+// non access modifier static - method - exists independently from class object, has no reference to class objects variables, must be passed in via parameters
 // non access modifier final - variable - value cannot be changed
 // non access modifier final - method - cannot be overridden
 // non access modifier final - class - cannot be inherited
