@@ -1,5 +1,5 @@
 
-public class FizzBuzz // seeing how I approach the fizz buzz test
+public class FizzBuzz // seeing how I approach the fizz buzz challenge
 {
 	public static String Fizz(int num) // modularise riiight...
 	{
