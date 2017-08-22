@@ -1,5 +1,5 @@
 
-public class ExampleInterfaceCarAudiS3 implements ExampleInterfaceCar {
+public class ExampleInterfaceCarAudiS3 implements ExampleInterfaceCar { // multiple interfaces can be implemented, comma separated
 	String carName = "Audi S3";
 	@Override
 	public void getNoughtToSixtyMilesPerHour() {
