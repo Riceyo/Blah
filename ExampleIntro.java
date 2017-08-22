@@ -50,7 +50,7 @@ public class ExampleIntro
 	public void WhileLoop(int from, int to)
 	{
 		int loop; // method local integer variable to count the loops
-		loop = from; // set the loop count integer integer to the first (from) parameter passed 
+		loop = from; // set the loop count integer to the first (from) parameter passed 
 		while(loop <= to) // keep looping as long as this condition is met (current loop less then second parameter passed (to))
 		{
 			System.out.println(loop); // print the value of the current loop variable
