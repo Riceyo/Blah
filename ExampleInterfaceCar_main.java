@@ -12,7 +12,7 @@ public class ExampleInterfaceCarCall {
 		AudiS3.getBrakeHorsepower();
 		AudiS3.getMilesPerGallon();
 		AudiS3.getPrice();
-		ExampleInterfaceCarVWGolfGTI ObjRefVWGolfGTI = new ExampleInterfaceCarVWGolfGTI(); // create object from the class constructor but now assign it reference variable of the class
+		ExampleInterfaceCarVWGolfGTI ObjRefVWGolfGTI = new ExampleInterfaceCarVWGolfGTI(); // create object from the class constructor but now assign it reference variable of the class, not the interface
 		ObjRefVWGolfGTI.getNoughtToSixtyMilesPerHour();
 		ObjRefVWGolfGTI.getBrakeHorsepower();
 		ObjRefVWGolfGTI.getMilesPerGallon();
