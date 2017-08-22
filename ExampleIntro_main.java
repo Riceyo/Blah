@@ -1,7 +1,6 @@
 
 // class - blueprint for an object, contains instance variables (data members, data, values, states) and methods (instructions, behaviours)
-// class modifiers can only be public, final, abstract
-// however inner classes can have other modifiers
+// class modifiers can only be public, final, abstract, however inner classes can have other modifiers
 
 // access modifier public - anyone can access
 // access modifier protected - subclasses can access regardless of package
@@ -22,16 +21,16 @@ public class ExampleIntro_Main
 {
 	public static void main(String[] args) // main method, application entry point, must be public static for the jvm to see it and invoke it, string array parameter is for command line arguments
 	{
-		String localvariable1 = "localvariable1"; // create variable (type name)
+		String localvariable1 = "localvariable1"; // create variable (type name = value)
 		String localvariable2 = "localvariable2"; // local variable as created inside a method, can only be accessed inside this method
 		String localvariable3 = "localvariable3";  
 		ExampleIntro referencevariable; // create reference variable of the type class in stack memory
 		referencevariable = new ExampleIntro(); // create new instance of class (object) inside heap memory via the class constructor, links to the reference variable in the stack memory
-		referencevariable.method1(localvariable1); // call method from the object passing it string parameter
-		referencevariable.method2(localvariable1, localvariable2); // call method from the object passing it two string parameters
-		referencevariable.method3(localvariable1, localvariable2, localvariable3); // call method from the object passing it three string parameters
-		referencevariable.method4(); // call method from the object, passing it nothing
-		referencevariable.method5(); // call method from the object, passing it nothing
+		referencevariable.method1(localvariable1); // call method from the object passing it local string parameter
+		referencevariable.method2(localvariable1, localvariable2); // call method from the object passing it two local string parameters
+		referencevariable.method3(localvariable1, localvariable2, localvariable3); // call method from the object passing it three local string parameters
+		referencevariable.method4(); // call method from the object, passing it nothing as nothing is expected
+		referencevariable.method5(); // call method from the object, passing it nothing as nothing is expected
 		System.out.println(referencevariable.IfElseOddOrEven(101)); // print what this function method returns when called with this parameter
 		System.out.println(referencevariable.IfElseOddOrEven(102)); // print what this function method returns when called with a different parameter
 		referencevariable.ForLoop(1, 3); // call this method and pass it two parameters
