@@ -1,3 +1,5 @@
+' this is very inefficient
+
 on error resume next
 
 str_path = "n:\downloads\"
