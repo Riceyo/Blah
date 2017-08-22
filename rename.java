@@ -32,3 +32,5 @@ public class rename
 		}
 	}
 }
+
+// rename.bat - java -classpath ...\workspace\project\bin\ rename
