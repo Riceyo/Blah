@@ -1,5 +1,5 @@
 
-public class ExampleInheritanceFootballer { // parent class, super class, inheritance can be chained, child will get great great great parents methods etc	
+public class ExampleInheritanceFootballer { // parent class, super class, inheritance can be chained (child will get great parents methods etc), final class cannot be inherited, abstract class must be inherited	
 	public ExampleInheritanceFootballer() { // constructors are not inherited but can be called by the child / subclasses via "super()" in their constructor, cannot be hidden or overridden
 		System.out.println("=== Footballer Constructor ==="); // even though the constructors are not inherited, the default constructor will always run, "super()" will always run
 	}
