@@ -17,11 +17,11 @@ def main():
 		outputstr += str(tmp[0]) + spacer
 		tmp = res['runtime']
 		outputstr += str(tmp[0]) + spacer
-		tmp = res['director']
-		outputstr += str(tmp[0]) + spacer
+		#tmp = res['director']
+		#outputstr += str(tmp[0]) + spacer
 		tmp = res['cast']
 		outputstr += str(tmp[0])
-		outputstr += ", " + str(tmp[1])
+		#outputstr += ", " + str(tmp[1])
 		print(outputstr)
 if __name__ == '__main__':
     main()
