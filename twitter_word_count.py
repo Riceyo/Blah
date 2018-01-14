@@ -4,10 +4,10 @@ from TwitterSearch import *
 from collections import *
 
 ts = TwitterSearch(
-    consumer_key = '5JyU7WB3PXLkhyRJofTHEw',
-    consumer_secret = 'LaBmpLxCERwncmInaoS697A10egFO2PvjjWWNAZ5sI',
-    access_token = '38880325-vD0PwpTEq11nrRsLyK4pnLN6aWIhmXNdb2jiES5Zn',
-    access_token_secret = 'TeCETE9g2howj0un6z9uP7cEMJciesUFCmbfvfH4ZcVIq'
+    consumer_key = '',
+    consumer_secret = '',
+    access_token = '',
+    access_token_secret = ''
 )
 
 tso = TwitterSearchOrder()
