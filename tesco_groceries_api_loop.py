@@ -1,6 +1,6 @@
 import http.client, urllib.request, urllib.parse, urllib.error, base64, time
 
-headers = {'Ocp-Apim-Subscription-Key': 'c83fdbe1c5e84c7aabe2ee0a6b4f181f'}
+headers = {'Ocp-Apim-Subscription-Key': ''}
 
 try:
 	conn = http.client.HTTPSConnection('dev.tescolabs.com')
