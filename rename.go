@@ -16,10 +16,12 @@ func main() {
 	}
 	for _, fileitem := range files {
 		for _, replaceitem := range replacearray {
-			fmt.Println(replaceitem)
-			strings.Replace(fileitem.Name(), replaceitem, "", 0)
-			fmt.Println(fileitem.Name())
+			fmt.Println("replaceitem: " + replaceitem)
+			fmt.Println("old fileitem: " + fileitem.Name())
+			var test = strings.Replace(fileitem.Name(), replaceitem, "", -1)
+			fmt.Println("new fileitem: " + fileitem.Name())
+			fmt.Println("test: " + test)
 		}
-		fmt.Println(fileitem.Name())
+		fmt.Println("new new fileitem: " + fileitem.Name())
 	}
 }
