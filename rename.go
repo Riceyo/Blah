@@ -1,27 +1,33 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
+	"path/filepath"
 	"strings"
 )
 
 func main() {
-	var dlpath = "C:\\testfiles"
+	var dlpath = "C:\\testfiles\\"
 	replacearray := [...]string{"720p", "1080p"}
 	files, err := ioutil.ReadDir(dlpath)
 	if err != nil {
 		log.Fatal(err)
 	}
 	for _, fileitem := range files {
+		var filename = strings.ToLower(fileitem.Name())
+		var filenameext = filepath.Ext(filename)
+		var filenamebase = strings.TrimSuffix(filename, filepath.Ext(filename))
 		for _, replaceitem := range replacearray {
-			fmt.Println("replaceitem: " + replaceitem)
-			fmt.Println("old fileitem: " + fileitem.Name())
-			var test = strings.Replace(fileitem.Name(), replaceitem, "", -1)
-			fmt.Println("new fileitem: " + fileitem.Name())
-			fmt.Println("test: " + test)
+			filenamebase = strings.Replace(filenamebase, replaceitem, "", -1)
 		}
-		fmt.Println("new new fileitem: " + fileitem.Name())
+		if _, err := os.Stat(dlpath + strings.Trim(filenamebase, " ") + filenameext); err == nil {
+		} else {
+			err := os.Rename(dlpath+fileitem.Name(), dlpath+strings.Trim(filenamebase, " ")+filenameext)
+			if err != nil {
+				log.Fatal(err)
+			}
+		}
 	}
 }
