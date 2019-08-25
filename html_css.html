@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			HTML5 CSS3
+		</title>
+		<style>
+			* (margin: 0px; padding: 0px;)
+			header, nav, article, footer {display: block;}
+			h1#h1-id {color: blue;}
+			h1.h1-class {color: green;}
+			h1[h1-attribute] {color: red;}
+			h1[h1-attribute*="xyz"] {color: orange;}
+			p:nth-child(odd) {font-weight: bold; font-style: italic;}
+			h2.h2-class-negation {color: pink;}
+			h2:not(.h2-class-negation) {color: pink; text-decoration: line-through;}
+			body {text-align: center; font-family: Tahoma;}
+			#wrapper {border: 0px; width: 600px; margin: 40px auto; text-align: left;}
+			#header {background: yellow; border: 5px solid black; padding: 20px;}
+			#nav-inline {text-align: center;}
+			#nav-inline ul {padding: 0px;}
+			#nav-inline li {display: inline-block; list-style: none; padding: 15px;}
+			#article-odds {background: orange; padding: 10px; float: left; width: 40%; height: 250px; margin: 0px 0px 15px 0px;}
+			#article-negation {background: grey; padding: 10px; float: right; width: 40%; height: 250px; margin: 0px 0px 15px 0px;}
+			#footer {clear: both; text-align: center; padding: 5px; border-top: 5px dashed black;}
+			article footer {font-weight: bold; color: white; text-align: right;}
+			#wrapper-webkit {border: 0px; padding: 0px; margin: 5px; width: 80%; margin: 20px auto; display: -webkit-box; -webkit-box-orient: horizontal; -webkit-box-flex: 1;}
+			#article-webkit {border: 2px solid black; padding: 5px; margin: 5px; -webkit-box-flex: 1; text-align: center; background: lightgrey;}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header id="header">
+				<h1 id="h1-id">h1 style by id</h1>
+				<h1 class="h1-class">h1 style by class</h1>
+				<h1 h1-attribute="abc">h1 style by attribute</h1>
+				<h1 h1-attribute="xyz">h1 style by attribute regex</h1>
+			</header>
+			<nav id="nav-inline">
+				<ul>
+					<li>inline list1</li>
+					<li>inline list2</li>
+					<li>inline list3</li>
+				</ul>
+			</nav>
+			<article id="article-odds">
+				<p>p style odds only</p>
+				<p>p style odds only</p>
+				<p>p style odds only</p>
+				<p>p style odds only</p>
+				<p>p style odds only</p>
+				<footer>
+					article footer
+				</footer>
+			</article>
+			<article id="article-negation">
+				<h2 class="h2-class-negation">h2 style negation</h2>
+				<h2 class="any-other-class">h2 style negation</h2>
+				<h2 class="h2-class-negation">h2 style negation</h2>
+				<h2 class="any-other-class">h2 style negation</h2>
+				<footer>
+					article footer
+				</footer>
+			</article>
+			<footer id="footer">
+				<h3>footer</h3>
+			</footer>
+		</div>
+		<div id="wrapper-webkit">
+			<article id="article-webkit">
+				webkit box flex
+			</article>
+			<article id="article-webkit">
+				webkit box flex
+			</article>
+			<article id="article-webkit">
+				webkit box flex
+			</article>		
+		</div>
+	</body>
+</html>
