@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>
-			HTML CSS
+			HTML5 CSS3
 		</title>
 		<style>
 			* (margin: 0px; padding: 0px;)
@@ -27,6 +27,18 @@
 			article footer {font-weight: bold; color: white; text-align: right;}
 			#wrapper-webkit {border: 0px; padding: 0px; margin: 5px; width: 80%; margin: 20px auto; display: -webkit-box; -webkit-box-orient: horizontal; -webkit-box-flex: 1;}
 			#article-webkit {border: 2px solid black; padding: 5px; margin: 5px; -webkit-box-flex: 1; text-align: center; background: lightgrey;}
+			#wrapper-box-order {display: -webkit-box; -webkit-box-orient: horizontal; -webkit-box-direction: reverse; -webkit-box-pack: center;}
+			#box {border: 2px dashed red; padding: 5px; margin: 5px;}
+			#flex-yes {border: 2px solid black; padding: 5px; margin: 5px; -webkit-box-flex: 1; text-align: center; background: lightgrey; -webkit-box-flex: 1; width: 100px; height: 50px;}
+			#flex-no {border: 2px solid black; padding: 5px; margin: 5px; -webkit-box-flex: 1; text-align: center; background: lightgrey; -webkit-box-flex: 0; width: 100px; height: 50px;}
+			#round-box-shadow {display: block; width: 600px; margin: 20px auto; padding: 20px; border: 2px solid red; background: yellow; border-radius: 50px; color: red; font-weight: bold; box-shadow: 5px 5px 5px;}
+			#box-gradient {display: block; width: 600px; margin: 20px auto; padding: 20px; border: 0px; background-image: radial-gradient(black 0%, grey 75%); color: white; font-weight: bold;}
+			#box-outline {display: block; width: 100px; margin: 20px auto; padding: 10px; border: 10px solid lightgrey; background: white; color: black; font-weight: bold; outline: 10px solid grey;}
+			#box-scale {display: block; width: 200px; margin: 20px auto; padding: 10px; border: 0px; background: orange; color: black; font-weight: bold; transform: scale(-1, 1);}
+			#box-skew {display: block; width: 200px; margin: 20px auto; padding: 10px; border: 0px; background: orange; color: black; font-weight: bold; transform: skew(20deg);}
+			#box-rotate {display: block; width: 200px; margin: 50px auto; padding: 10px; border: 0px; background: orange; color: black; font-weight: bold; transform: rotate(15deg);}
+			#box-hover {display: block; width: 200px; margin: 100px auto; padding: 10px; border: 0px; background: orange; color: black; font-weight: bold; transition: transform 2s;}
+			#box-hover:hover {transform: rotate(360deg);}
 		</style>
 	</head>
 	<body>
@@ -69,14 +81,46 @@
 		</div>
 		<div id="wrapper-webkit">
 			<article id="article-webkit">
-				webkit box flex
+				box flex
 			</article>
 			<article id="article-webkit">
-				webkit box flex
+				box flex
 			</article>
 			<article id="article-webkit">
-				webkit box flex
+				box flex
 			</article>		
+		</div>
+		<div id="wrapper-box-order">
+			<div id="box">box1 order</div>
+			<div id="box">box2 order</div>
+			<div id="box">box3 order</div>
+			<div id="box">box4 order</div>
+		</div>
+		<div id="wrapper-webkit">
+			<div id="flex-no">no flex</div>
+			<div id="flex-yes">flex!</div>
+			<div id="flex-no">no flex</div>
+		</div>
+		<div id="round-box-shadow">
+			border radius and box shadow
+		</div>
+		<div id="box-gradient">
+			gradient
+		</div>
+		<div id="box-outline">
+			outline
+		</div>
+		<div id="box-scale">
+			scale
+		</div>
+		<div id="box-skew">
+			skew
+		</div>
+		<div id="box-rotate">
+			rotate
+		</div>
+		<div id="box-hover">
+			hover
 		</div>
 	</body>
 </html>
