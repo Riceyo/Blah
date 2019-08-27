@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<script>
+			function getElements() {
+				// get list of elements with id of blah
+				var elementList = document.querySelectorAll('#blah');
+				// loop through the list
+				for(var loop = 0; loop < elementList.length; loop++) {
+					// add an on click event to all of these elements
+					elementList[loop].onclick=popUp;
+				}
+			}
+			function popUp() {
+				alert('!');
+			}
+			function printLocalVariable() {
+				var localVariable = "I am local";
+				document.write("<br />" + localVariable);
+			}
+			function passedIn(value) {
+				document.write("<br />Passed in: " + value);
+			}
+			function oddOrEven(num) {
+				if (num % 2 == 0) { // modulus (remainder) math operator
+					return "even";
+				} else {
+					return "odd";
+				}
+			}
+			document.write("testing \"escape\" character");
+			window.onload=getElements;
+			printLocalVariable();
+			//document.write("<br />" + localVariable); // won't work as local to function
+			var globalVariable = "I am global";
+			document.write("<br />" + globalVariable);
+			passedIn("test"); // string
+			passedIn(1); // number
+			var oddNum = 1;
+			var evenNum = 2;
+			document.write("<br />" + oddNum + " is " + oddOrEven(oddNum));
+			document.write("<br />" + evenNum + " is " + oddOrEven(evenNum));
+			var num100 = 100;
+			num100++
+			document.write("<br />100++ " + num100);
+			var num100 = 100;
+			num100--
+			document.write("<br />100-- " + num100);
+		</script>
+		<title>
+			JavaScript 
+		</title>
+	</head>
+	<body>
+		<p id="blah">click me</p>
+		<p id="blah">click me</p>
+		<p id="blah">click me</p>
+	</body>
+</html>
