@@ -1,10 +1,55 @@
 <html>
 	<body>
-		<h1 id="fade">fade</h1>
+		<button id="h1FadeToggleButton">h1 fade toggle</button>
+		<button id="multiFadeToggleButton">multi fade toggle</button>
+		<button id="childFadeToggleButton">child fade toggle</button>
+		<button id="evenFadeToggleButton">even fade toggle</button>
+		<h1 id="h1fade">h1</h1>
+		<h2 id="h2fade">h2</h1>
+		<h3 id="h3fade">h3</h1>
+		<div>
+			<p>
+				p inside div
+			</p>
+		</div>
+		<p>
+			p outside div
+		</p>
+		<ul>
+			<li>list 0</li>
+			<li>list 1</li>
+			<li>list 2</li>
+			<li>list 3</li>
+			<li>list 4</li>
+		</ul>
 	</body>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script>
-		$("#fade").fadeToggle(1000);
-		$("#fade").fadeToggle(2000);
+		// anon function
+		// code only works when document has fully loaded
+		$(document).ready(function() {
+			$("#h1fade").fadeToggle(500);
+			$("#h1fade").fadeToggle(500);
+			$("#h1FadeToggleButton").click(h1FadeToggleButton);
+			$("#multiFadeToggleButton").click(multiFadeToggleButton);
+			$("#childFadeToggleButton").click(childFadeToggleButton);
+			$("#evenFadeToggleButton").click(evenFadeToggleButton);
+			function h1FadeToggleButton() {
+				$("#h1fade").fadeToggle(500);
+				$("#h1fade").fadeToggle(500);
+			}
+			function multiFadeToggleButton() {
+				$("h1, h2, h3").fadeToggle(500);
+				$("h1, h2, h3").fadeToggle(500);
+			}
+			function childFadeToggleButton() {
+				$("div > p").fadeToggle(500);
+				$("div > p").fadeToggle(500);
+			}
+			function evenFadeToggleButton() {
+				$("li:even").fadeToggle(500);
+				$("li:even").fadeToggle(500);
+			}
+		});
 	</script>
 </html>
