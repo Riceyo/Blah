@@ -3,6 +3,127 @@
 	<head>
 		<meta charset="utf-8" />
 		<script>
+		
+			document.write("testing \"escape\" character");
+			
+			function printLocalVariable() {
+				var localVariable = "I am local"; // only available inside this function
+				document.write("<br />" + localVariable);
+			}
+			
+			printLocalVariable();
+			
+			//document.write("<br />" + localVariable); // won't work as variable is local to function
+			
+			var globalVariable = "I am global";
+			
+			document.write("<br />" + globalVariable);	
+			
+			function passedIn(value) {
+				document.write("<br />Passed in: " + value);
+			}
+			
+			passedIn("test"); // string
+			passedIn(1); // number		
+			
+			function oddOrEven(num) {
+				if (num % 2 == 0) { // modulus (remainder) math operator
+					return "even";
+				} else {
+					return "odd";
+				}
+			}
+
+			var oddNum = 1;
+			var evenNum = 2;			
+			document.write("<br />" + oddNum + " is " + oddOrEven(oddNum));
+			document.write("<br />" + evenNum + " is " + oddOrEven(evenNum));
+			
+			var num100 = 100;
+			num100++ // add one
+			document.write("<br />100++ " + num100);
+			
+			var num100 = 100;
+			num100-- // minus one
+			document.write("<br />100-- " + num100);
+			
+			for(var loop = 1; loop <= 5; loop++)
+			{
+				document.write("<br />for loop " + loop)
+			}
+			
+			var whileloop = 1;
+			while(whileloop <= 5)
+			{
+				document.write("<br />while loop " + whileloop)
+				whileloop++;
+			}
+			
+			var dowhileloop = 1;
+			do{
+			document.write("<br />do while loop " + dowhileloop);
+			dowhileloop++;
+			}while(dowhileloop <= 5);
+			
+			var dowhileloop = 10;
+			do{
+			document.write("<br />do while loop " + dowhileloop); // will always run at least once
+			dowhileloop++;
+			}while(dowhileloop <= 5);
+			
+			var numberarray = [1,2,3,4,5];
+			var stringarray = ["a","b","c","d","e"];
+			var mixedarray = [1,"a"]; // arrays can have different data types
+			document.write("<br /> number array 0 - " + numberarray[0]);
+			document.write("<br /> string array 0 - " + stringarray[0]);
+			document.write("<br /> mixed array 0 - " + mixedarray[0]);
+			document.write("<br /> mixed array 1 - " + mixedarray[1]);
+			mixedarray.push("pushed") // items can be added
+			document.write("<br /> mixed array 2 - " + mixedarray[2]);
+			document.write("<br /> mixed array length - " + mixedarray.length);
+			
+			var objCarVWGolf = {				
+				make : "VW"
+				,model : "Golf"
+				,doors : 3
+				,transmission : "auto"				
+				,parkAssist : function()
+				{
+					return "PARKING";
+				}				
+			}
+			
+			objCarVWGolf.fuel = "Petrol";
+			
+			document.write("<br />" + objCarVWGolf.make);
+			document.write("<br />" + objCarVWGolf.model);
+			document.write("<br />" + objCarVWGolf.parkAssist());
+			document.write("<br />" + objCarVWGolf.fuel);
+			
+			delete objCarVWGolf.fuel;			
+			document.write("<br />" + objCarVWGolf.fuel);
+			
+			function objCar(make, model, doors, transmission) // constructor function
+			{
+				this.make = make;
+				this.model = model;
+				this.doors = doors;
+				this.transmission = transmission;
+				this.parkAssist = function()
+				{
+					return "PARKING";
+				}
+			}
+			
+			var car1 = new objCar("VW", "Golf", 3, "auto");
+			var car2 = new objCar("Audi", "A3", 3, "auto");
+			
+			document.write("<br />" + car1.make + car1.model);
+			document.write("<br />" + car2.make + car2.model);
+			
+			document.write("<br />" + typeof(car1));
+			document.write("<br />" + typeof(car1.make));
+			
 			function getElements() {
 				// get list of elements with id of blah
 				var elementList = document.querySelectorAll('#blah');
@@ -12,49 +133,21 @@
 					elementList[loop].onclick=popUp;
 				}
 			}
+			
 			function popUp() {
 				alert('!');
 			}
-			function printLocalVariable() {
-				var localVariable = "I am local";
-				document.write("<br />" + localVariable);
-			}
-			function passedIn(value) {
-				document.write("<br />Passed in: " + value);
-			}
-			function oddOrEven(num) {
-				if (num % 2 == 0) { // modulus (remainder) math operator
-					return "even";
-				} else {
-					return "odd";
-				}
-			}
-			document.write("testing \"escape\" character");
+			
 			window.onload=getElements;
-			printLocalVariable();
-			//document.write("<br />" + localVariable); // won't work as local to function
-			var globalVariable = "I am global";
-			document.write("<br />" + globalVariable);
-			passedIn("test"); // string
-			passedIn(1); // number
-			var oddNum = 1;
-			var evenNum = 2;
-			document.write("<br />" + oddNum + " is " + oddOrEven(oddNum));
-			document.write("<br />" + evenNum + " is " + oddOrEven(evenNum));
-			var num100 = 100;
-			num100++
-			document.write("<br />100++ " + num100);
-			var num100 = 100;
-			num100--
-			document.write("<br />100-- " + num100);
+			
 		</script>
 		<title>
 			JavaScript 
 		</title>
 	</head>
 	<body>
-		<p id="blah">click me</p>
-		<p id="blah">click me</p>
-		<p id="blah">click me</p>
+		<p id="blah">click me popup</p>
+		<p id="blah">click me popup</p>
+		<p id="blah">click me popup</p>
 	</body>
 </html>
