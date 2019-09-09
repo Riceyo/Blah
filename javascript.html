@@ -140,6 +140,36 @@
 			
 			window.onload=getElements;
 			
+			function h1buttClick()
+			{
+				document.getElementById("h1id").innerHTML="h1 - button clicked";
+			}
+			
+			function inputbuttClick()
+			{
+				var enteredText = document.getElementById("inputid").value;
+				alert("Entered text - " + enteredText);				
+			}
+			
+			function styleP()
+			{
+				var pTags = document.getElementsByTagName("p");
+				for(var loop = 0; loop <= pTags.length; loop++)
+				{
+					pTags[loop].style.color = "blue";
+				}
+			}
+			
+			function mouseOverColor()
+			{
+				mouseOver.style.background = "black";
+			}
+			
+			function mouseOutColor()
+			{
+				mouseOver.style.background = "whitesmoke";
+			}
+
 		</script>
 		<title>
 			JavaScript 
@@ -149,5 +179,18 @@
 		<p id="blah">click me popup</p>
 		<p id="blah">click me popup</p>
 		<p id="blah">click me popup</p>
+		<h1 id="h1id">h1</h1>
+		<button onClick="h1buttClick()">change h1 text</button>
+		<br />
+		<br />
+		<input id="inputid" placeholder="placeholder" />
+		<button onClick="inputbuttClick()">alert</button>
+		<br />
+		<br />
+		<input type="password" placeholder="password" />
+		<br />
+		<br />
+		<button onClick="styleP()">style all p tags</button>
+		<p id="mouseOver" style="background:whitesmoke;" onmouseover="mouseOverColor()" onmouseout="mouseOutColor()">mouse over</p>
 	</body>
 </html>
