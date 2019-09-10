@@ -3,7 +3,7 @@
 		<button id="h1FadeToggleButton">h1 fade toggle</button>
 		<button id="multiFadeToggleButton">multi fade toggle</button>
 		<button id="childFadeToggleButton">child fade toggle</button>
-		<button id="evenFadeToggleButton">even fade toggle</button>
+		<button id="oddEvenFadeToggleButton">odd even fade toggle click dblclick</button>
 		<h1 id="h1fade">h1</h1>
 		<h2 id="h2fade">h2</h1>
 		<h3 id="h3fade">h3</h1>
@@ -22,6 +22,23 @@
 			<li>list 3</li>
 			<li>list 4</li>
 		</ul>
+		<p id="pMouseEnterLeave" style="background:whitesmoke">mouse enter leave</p>
+		<p id="pMouseHover" style="background:whitesmoke">mouse hover</p>
+		<button id="borderAllOnButton">border all on</button>
+		<button id="borderAllOffButton">border all off</button>
+		<br />
+		<br />
+		<button id="pToggle">p toggle</button>
+		<button id="pFadeToggle">p fade toggle</button>
+		<button id="pSlideToggle">p slide toggle</button>
+		<br />
+		<br />
+		<div id="aniDiv" style="background: black; width: 50px; position: absolute;">.</div>
+		<br />
+		<br />
+		<button id="aniButt">animate</button>
+		<button id="aniButtCallback">animate callback</button>
+		<button id="chainButt">chain</button>
 	</body>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script>
@@ -33,7 +50,20 @@
 			$("#h1FadeToggleButton").click(h1FadeToggleButton);
 			$("#multiFadeToggleButton").click(multiFadeToggleButton);
 			$("#childFadeToggleButton").click(childFadeToggleButton);
-			$("#evenFadeToggleButton").click(evenFadeToggleButton);
+			$("#oddEvenFadeToggleButton").click(evenFadeToggleButton);
+			$("#oddEvenFadeToggleButton").dblclick(oddFadeToggleButton);
+			$("#pMouseEnterLeave").mouseenter(pMouseEnter);
+			$("#pMouseEnterLeave").mouseleave(pMouseLeave);
+			$("#pMouseHover").hover(pMouseEnter, pMouseLeave);
+			$("#borderAllOnButton").click(borderAllOnButton);
+			$("#borderAllOffButton").click(borderAllOffButton);
+			$("#borderAllOffButton").click(borderAllOffButton);
+			$("#pToggle").click(pToggle);
+			$("#pFadeToggle").click(pFadeToggle);
+			$("#pSlideToggle").click(pSlideToggle);
+			$("#aniButt").click(aniFunct);
+			$("#aniButtCallback").click(aniCallbackFunct);
+			$("#chainButt").click(chainFunct);
 			function h1FadeToggleButton() {
 				$("#h1fade").fadeToggle(500);
 				$("#h1fade").fadeToggle(500);
@@ -49,6 +79,40 @@
 			function evenFadeToggleButton() {
 				$("li:even").fadeToggle(500);
 				$("li:even").fadeToggle(500);
+			}
+			function oddFadeToggleButton() {
+				$("li:odd").fadeToggle(500);
+				$("li:odd").fadeToggle(500);
+			}
+			function pMouseEnter() {
+				$("#pMouseEnterLeave").fadeOut();
+			}
+			function pMouseLeave() {
+				$("#pMouseEnterLeave").fadeIn();
+			}
+			function borderAllOnButton() {
+				$("*").css("border", "2px solid black");
+			}
+			function borderAllOffButton() {
+				$("*").css("border", "0px");
+			}
+			function pToggle() {
+				$("p").toggle();
+			}
+			function pFadeToggle() {
+				$("p").fadeToggle(1500);
+			}
+			function pSlideToggle() {
+				$("p").slideToggle(1500);
+			}
+			function aniFunct() {
+				$("#aniDiv").animate({left: '50px', opacity: '0.5'}, 2000);
+			}
+			function aniCallbackFunct() {
+				$("#aniDiv").animate({left: '50px', opacity: '0.5'}, 5000, function() {alert("animate complete");});
+			}
+			function chainFunct() {
+				$("#aniDiv").slideUp(1500).slideDown(1500).fadeOut(1500).fadeIn(1500);
 			}
 		});
 	</script>
