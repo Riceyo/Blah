@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	</head>
+	<body>
+		<input type="text" name="datePicker" id="datePicker" placeholder="select date" />
+		<p id="pToolTip" style="background: lightgrey; padding: 20px;" title="title">tooltip</p>
+		<p id="pDialog" style="background: lightgrey; padding: 20px;" title="title">dialog</p>
+		<input type="text" name="autoComplete" id="autoComplete" placeholder="auto complete" />
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#datePicker").datepicker({
+				numberOfMonths: 2
+				,changeYear: true
+				,changeMonth: true
+				,minDate: new Date(2010,0,1)
+			});
+			$("#pToolTip").tooltip({
+				track: false
+				,content: "content!"
+				,show: {effect: "highlight", duration: 3000}
+			});
+			$("#pDialog").dialog({
+				title: "title!"
+				,draggable: true
+				,resizable: true
+				,height: 300
+				,width: 200
+				,modal: true
+				,buttons: [{text: "butt1", icon: "ui-icon-heart"}, {text: "butt2", icon: "ui-icon-home"}]
+			});
+			$("#autoComplete").autocomplete({source: ["abc", "abc1", "abc2", "abc3"]}, {autoFocus: true, delay: 100, minLength: 2});
+		});
+	</script>
+</html>
