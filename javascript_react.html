@@ -1,0 +1,115 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<div id="root"></div>
+		<div id="counterButton"></div>
+		<div id="multiRender"></div>
+		<div id="app"></div>
+		<br />
+		<div id="countApp"></div>
+		<br />
+		<div id="rerenderReact"></div>
+		<div id="rerenderNonReact"></div>		
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>		
+		<script type="text/babel">
+		
+			function Hello() {
+				return <div>Hello!</div>; // jsx - React.createElement() call
+			}			
+			
+			ReactDOM.render(
+				<Hello /> // component to render
+				,document.getElementById('root') // where to render
+			);
+						
+			function CounterButton() {
+				const [counter, setCounter] = React.useState(0); // hook
+				return <button onClick={() => setCounter(counter+1)}>{counter}</button>; // arrow function
+			}
+			
+			ReactDOM.render(
+				<CounterButton />
+				,document.getElementById('counterButton')
+			);
+			
+			ReactDOM.render(
+				<React.Fragment>
+					<Hello />
+					<CounterButton />
+				</React.Fragment>
+				,document.getElementById('multiRender') // render multiple components in single render
+			);
+			
+			function App() { // put all components to render in this function
+				return (
+					<React.Fragment>
+						<Hello />
+						<CounterButton />
+					</React.Fragment>
+				)
+			}
+			
+			ReactDOM.render(
+				<App />
+				,document.getElementById('app') // render function that returns all components to render
+			);
+			
+			function CounterButtonDisplay(props) {
+				return (
+					<button onClick={props.click}>+1</button> // on button click call the "click" prop
+				);
+			}
+			
+			function Display(props) {
+				return (
+					<div>{props.number}</div> // display "number" prop
+				);
+			}
+			
+			function CountApp() {
+				const [counter, setCounter] = React.useState(1337); // counter shown by "number" prop
+				const plusOne = () => setCounter(counter+1); // called by "click" prop
+				return (
+					<div>
+						<CounterButtonDisplay click={plusOne} />
+						<Display number={counter} />
+					</div>
+				);
+			}
+			
+			ReactDOM.render(
+				<CountApp />
+				,document.getElementById('countApp')
+			);
+			
+			function RenderDate() {
+				return new Date().toLocaleTimeString();
+			}
+			
+			function RenderInput() {
+				return <input type="text" placeholder="react only re-rendering date" />
+			}
+			
+			const rerender = () => {
+
+				ReactDOM.render(
+					<div>
+						<RenderDate />
+						<br />
+						<RenderInput />
+					</div>
+					,document.getElementById('rerenderReact')
+				)
+				
+				document.getElementById('rerenderNonReact').innerHTML = "<div><input placeholder='non-react re-rendering all' /></div>";
+				
+			}
+			
+			setInterval(rerender, 1000);
+			
+		</script>
+	</body>
+</html>
