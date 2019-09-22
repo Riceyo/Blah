@@ -3,11 +3,13 @@
 const http = require('http');
 
 const server = http.createServer((request, responce) => {
-  console.dir(request, { depth:0 });
+  console.dir(request, {depth:0});
   console.log(request.url);
   console.log(request.connection.remoteAddress);
-  console.log(request, { depth:0 });
-  responce.end("hello");
+  console.log(request, {depth:0});
+  responce.writeHead(200, {'Content-Type': 'text/html'});
+  responce.write("hello <br />");
+  responce.end(Date());
 })
 
 server.listen(1337, () => {console.log("listening...")})
