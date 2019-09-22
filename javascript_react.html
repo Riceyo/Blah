@@ -10,11 +10,17 @@
 		<div id="countApp"></div>
 		<br />
 		<div id="rerenderReact"></div>
-		<div id="rerenderNonReact"></div>		
+		<div id="rerenderNonReact"></div>
+		<br />
+		<div id="propsTest"></div>
 		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 		<script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>		
 		<script type="text/babel">
+		
+		
+		
+		
 		
 			function Hello() {
 				return <div>Hello!</div>; // jsx - React.createElement() call
@@ -24,16 +30,24 @@
 				<Hello /> // component to render
 				,document.getElementById('root') // where to render
 			);
-						
+			
+			
+			
+			
+
 			function CounterButton() {
 				const [counter, setCounter] = React.useState(0); // hook
-				return <button onClick={() => setCounter(counter+1)}>{counter}</button>; // arrow function
+				return <button onClick={() => setCounter(counter + 1)}>{counter}</button>; // arrow function
 			}
 			
 			ReactDOM.render(
 				<CounterButton />
 				,document.getElementById('counterButton')
 			);
+			
+			
+			
+			
 			
 			ReactDOM.render(
 				<React.Fragment>
@@ -43,6 +57,10 @@
 				,document.getElementById('multiRender') // render multiple components in single render
 			);
 			
+			
+			
+			
+			
 			function App() { // put all components to render in this function
 				return (
 					<React.Fragment>
@@ -50,16 +68,23 @@
 						<CounterButton />
 					</React.Fragment>
 				)
-			}
+			}				
 			
 			ReactDOM.render(
 				<App />
 				,document.getElementById('app') // render function that returns all components to render
 			);
 			
+			
+			
+			
+			
 			function CounterButtonDisplay(props) {
 				return (
-					<button onClick={props.click}>+1</button> // on button click call the "click" prop
+					<div>
+						<button onClick={props.click1}> + 1</button>
+						<button onClick={props.click10}> + 10</button>
+					</div>
 				);
 			}
 			
@@ -70,11 +95,12 @@
 			}
 			
 			function CountApp() {
-				const [counter, setCounter] = React.useState(1337); // counter shown by "number" prop
-				const plusOne = () => setCounter(counter+1); // called by "click" prop
+				const [counter, setCounter] = React.useState(1337); // counter displayed by "number" prop
+				const plusOne = () => setCounter(counter + 1); // called by "click1" prop
+				const plusTen = () => setCounter(counter + 10); // called by "click10" prop
 				return (
 					<div>
-						<CounterButtonDisplay click={plusOne} />
+						<CounterButtonDisplay click1={plusOne} click10={plusTen} />
 						<Display number={counter} />
 					</div>
 				);
@@ -84,6 +110,10 @@
 				<CountApp />
 				,document.getElementById('countApp')
 			);
+			
+			
+			
+			
 			
 			function RenderDate() {
 				return new Date().toLocaleTimeString();
@@ -109,6 +139,50 @@
 			}
 			
 			setInterval(rerender, 1000);
+			
+			
+			
+			
+			
+			function PropsTestFuncDisplay(props) {
+				return (
+					<div>
+						{props.blah1}
+						<br />
+						{props.blah2}
+						<br />
+						{props.blah3}
+						<br />
+						{props.displayDate}
+						<br />
+						{props.constValue}
+					</div>
+				);
+			}
+			
+			function PropsTestFunc() {
+				const someString = "lardydah";
+				return (					
+					<div>
+						<PropsTestFuncDisplay
+							blah1={"prop1"}
+							blah2={"prop2"}
+							blah3={"prop3"}
+							displayDate={Date()}
+							constValue={someString}
+						/>
+					</div>
+				);
+			}
+			
+			ReactDOM.render(
+				<PropsTestFunc />
+				,document.getElementById('propsTest')
+			);
+			
+			
+			
+			
 			
 		</script>
 	</body>
