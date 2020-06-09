@@ -45,6 +45,7 @@ replace_list = (
     ']',
     '{',
     '}',
+    '!',
     '1080p',
     '720p',
     '480p',
@@ -111,6 +112,12 @@ replace_list = (
     '5 1',
     'amzn',
     'galaxytv',
+    'web memento',
+    'web crimson',
+    'nanto',
+    'web rofl',
+    'ip 2 0 h 264 rtn',
+    'nf ch cmrg ethd'
     )
 files_list = os.listdir(dl_path)
 
