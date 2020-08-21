@@ -15,16 +15,6 @@ subreddits = "news+worldnews+politics+unitedkingdom+ukpolitics+nottheonion" + \
              "+funny+gifs+pics+aww+jokes"
 
 
-def downvoted():
-    downvoted_list = []
-    for submission in reddit.subreddit(subreddits).new(limit=9999):
-        if submission.upvote_ratio < 0.25:
-            downvoted_list.append(str(submission.upvote_ratio) + " " + "http://reddit.com" + submission.permalink)
-            # print("http://reddit.com" + submission.permalink)
-    downvoted_list.sort()
-    print(*downvoted_list, sep="\n")
-
-
 def upvoted():
     upvoted_list = []
     for submission in reddit.subreddit("all").hot(limit=1000):
@@ -35,6 +25,15 @@ def upvoted():
     print(*upvoted_list, sep="\n")
 
 
-# downvoted()
+def downvoted():
+    downvoted_list = []
+    for submission in reddit.subreddit(subreddits).new(limit=9999):
+        if submission.upvote_ratio < 0.25:
+            downvoted_list.append(str(submission.upvote_ratio) + " " + "http://reddit.com" + submission.permalink)
+            # print("http://reddit.com" + submission.permalink)
+    downvoted_list.sort()
+    print(*downvoted_list, sep="\n")
 
 # upvoted()
+
+# downvoted()
